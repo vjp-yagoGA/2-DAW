@@ -1,4 +1,4 @@
-function ejercicioA() {
+function ejercicio1() {
   let num1 = parseFloat(prompt("Introduce el primer número:"));
   let num2 = parseFloat(prompt("Introduce el segundo número:"));
   let num3 = parseFloat(prompt("Introduce el tercer número:"));
@@ -12,14 +12,14 @@ function ejercicioA() {
 }
 
 
-function ejercicioB() {
+function ejercicio2() {
   setTimeout(() => {
     alert("Hola");
   }, 3000);
 }
 
 
-function ejercicioC() {
+function ejercicio3() {
   let nombre = prompt("Introduce tu nombre:");
   setTimeout(() => {
     alert("Como estas? " + nombre);
@@ -27,7 +27,7 @@ function ejercicioC() {
 }
 
 
-function ejercicioD() {
+function ejercicio3() {
   let cadena = prompt("Escribe una palabra o frase:");
   let longitud = cadena.length;
 
