@@ -24,7 +24,7 @@ function mayor(): int {
 }
 
 /**
- * Concatena todos los parámetros recibidos separándolos con un espacio
+ * 
  * 
  * @param mixed 
  * @return string
