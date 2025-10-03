@@ -1,13 +1,13 @@
-function sumaLongitudes(...args) {
-    if (!args.every(arg => typeof arg === "string")) {
-        throw new Error("Todos los argumentos deben ser cadenas.");
-    }
-    const total = args.reduce((acc, str) => acc + str.length, 0);
-    console.log(`La suma total de las longitudes es: ${total}`);
+function sumaLongitudes(...cadenas) {
+  if (!cadenas.every(c => typeof c === "string")) {
+    console.error("Todos los elementos deben ser cadenas.");
+    return;
+  }
+
+  const suma = cadenas.reduce((acc, cadena) => acc + cadena.length, 0);
+  console.log("La suma de las longitudes es:", suma);
 }
 
-
-sumaLongitudes("Hey", "Bienvenido", "javascript");
-sumaLongitudes("a", "b", "c", "d"); 
-sumaLongitudes("Adios"); 
+sumaLongitudes("Hola", "mundo", "JS");
+sumaLongitudes("abc", "defgh");
 
