@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores de $_SERVER</title>
+    <style>
+        table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        h1, h2 { text-align: center; }
+        pre { background-color: #f8f8f8; padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Valores de $_SERVER</h1>
+
+    <?php if ($get_params): ?>
+        <h2>Parámetros GET recibidos:</h2>
+        <pre><?php print_r($get_params); ?></pre>
+    <?php endif; ?>
+
+    <?php if ($post_params): ?>
+        <h2>Parámetros POST recibidos:</h2>
+        <pre><?php print_r($post_params); ?></pre>
+    <?php endif; ?>
+
+    <h2>Contenido de $_SERVER:</h2>
+    <table>
+        <tr><th>Clave</th><th>Valor</th></tr>
+        <?php foreach ($server_data as $key => $value): ?>
+            <tr><td><?php echo htmlspecialchars($key); ?></td><td><?php echo htmlspecialchars($value); ?></td></tr>
+        <?php endforeach; ?>
+    </table>
+
+    <p style="text-align: center;">
+        <a href="Ej-401_post.html">Ir al Formulario POST</a> | 
+        <a href="Ej-401_enlace.html">Ir a la página con enlace</a>
+    </p>
+</body>
+</html>
+
+
+
+
+
+
+  
+
+   
