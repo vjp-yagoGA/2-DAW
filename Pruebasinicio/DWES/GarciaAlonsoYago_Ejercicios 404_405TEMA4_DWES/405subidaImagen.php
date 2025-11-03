@@ -13,7 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (strpos($type, 'image/') === 0) {
    
                 $data = file_get_contents($_FILES['file']['tmp_name']);
-                $base64 = 'data:' . $type . ';base64,' . base64_encode($data);
+                $base64 = 'data:' . $type . ';base64,' . base64_encode(
+                    $data);
 
                 echo "<h1>Imagen Subida Correctamente</h1>";
                 echo "<img src=\"$base64\" width=\"$width\" height=\"$height\" alt=\"Imagen subida\">";
