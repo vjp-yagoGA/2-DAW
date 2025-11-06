@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografía Personal - John Doe</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-photo {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .text {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+    
+        @media (min-width: 600px) {
+            .container {
+                max-width: 80%;
+                padding: 20px;
+            }
+            .section {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .section img {
+                width: 40%;
+                margin-top: 0;
+            }
+            .text-content {
+                flex: 1;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .container {
+                max-width: 1200px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .header {
+                width: 100%;
+            }
+            .section {
+                width: 48%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .section img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .section {
+                width: 30%;
+            }
+            .header {
+                text-align: left;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .profile-photo {
+                width: 150px;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            
+            <h1>Biografía</h1>
+            <p>Desarrollador web.</p>
+        </div>
+        
+        <div class="section">
+            <div class="text-content">
+                <h2>Aficiones</h2>
+                <p class="text">Mis aficion principal es jugar al padel con mis amigos.</p>
+            </div>
+            <img src="img/Padel.webp" alt="Imagen de aficiones">
+        </div>
+        
+        <div class="section">
+            <div class="text-content">
+                <h2>Música Favorita</h2>
+                <p class="text">Suelo escuchar un poco de todo no tengo una cancion favorita pero un ejemplo de una es "come n go" de Yeat".</p>
+            </div>
+            <img src="img/com n go.webp" alt="Imagen">
+        </div>
+        
+        <div class="section">
+            <div class="text-content">
+                <h2>Género de Cine Favorito</h2>
+                <p class="text">Mi género de cine favorito es la ciencia ficción como por ejemplo x-mens, Star wars, etc.</p>
+            </div>
+            <img src="img/x-mens.webp" alt="Imagen de los x-mens">
+        </div>
+    </div>
+</body>
+</html>
