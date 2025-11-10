@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menús con Flexbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f0f0f0;
+        }
+
+        /* Estilos comunes */
+        .menu {
+            width: 800px;
+            margin: 50px auto;
+            border: 3px solid #000;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #c00;
+            color: white;
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .nav {
+            background: #ddd;
+            padding: 15px 0;
+        }
+
+        .nav a {
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .content {
+            background: #0f0;
+            height: 200px;
+        }
+
+        
+        #diseno-b .nav a:hover {
+            background: #999; 
+            color: white;     
+        }
+
+        
+        #diseno-a .nav {
+            display: flex;
+            justify-content: flex-start;  
+            align-items: center;
+        }
+
+       
+        #diseno-b .nav {
+            display: flex;
+            justify-content: space-between;   /
+        }
+
+      
+        #diseno-b .nav a:last-child {
+            margin-right: 20px;
+        }
+
+       
+        #diseno-c .nav {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #diseno-c .dropdown {
+            position: relative;
+            background: #666;
+            color: white;
+            padding: 15px 30px;
+            cursor: pointer;
+        }
+
+        #diseno-c .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #bbb;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            left: 0;
+            top: 100%;
+            z-index: 1;
+        }
+
+        #diseno-c .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            margin: 0;
+            color: #333;
+        }
+
+        #diseno-c .dropdown-content a:hover {
+            background: #999;
+        }
+
+  
+        #diseno-c .dropdown.active .dropdown-content {
+            display: block;
+        }
+
+    
+        #diseno-b, #diseno-c {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Diseño A (visible por defecto) -->
+    <div id="diseno-a" class="menu">
+        <div class="header">Diseño A - Flexbox</div>
+        <div class="nav">
+            <a href="#">Enlace 1</a>
+            <a href="#" id="show-b">Enlace 2</a>
+            <a href="#" id="show-c">Enlace 3</a>
+            <a href="#">Enlace 4</a>
+        </div>
+        <div class="content"></div>
+    </div>
+
+    <!-- Diseño B (oculto inicialmente) -->
+    <div id="diseno-b" class="menu">
+        <div class="header">Diseño B - Flexbox</div>
+        <div class="nav">
+            <a href="#">Enlace 1</a>
+            <a href="#">Enlace 2</a>
+            <a href="#">Enlace 3</a>
+            <a href="#">Enlace 4</a>
+        </div>
+        <div class="content"></div>
+    </div>
+
+    <!-- Diseño C (oculto inicialmente) -->
+    <div id="diseno-c" class="menu">
+        <div class="header">Diseño C - Flexbox</div>
+        <div class="nav">
+            <div class="dropdown" id="dropdown-trigger">
+                Enlace 1
+                <div class="dropdown-content">
+                    <a href="#">Enlace 2</a>
+                    <a href="#">Enlace 3</a>
+                    <a href="#">Enlace 4</a>
+                </div>
+            </div>
+        </div>
+        <div class="content"></div>
+    </div>
+
+    <script>
+       
+        document.getElementById('dropdown-trigger').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+
+       
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown-trigger');
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+     
+        document.getElementById('show-b').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('diseno-b').style.display = 'block';
+        });
+
+     
+        document.getElementById('show-c').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('diseno-c').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
