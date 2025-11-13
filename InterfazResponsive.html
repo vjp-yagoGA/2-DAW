@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IES VALLE DEL JERTE - Diseño Responsivo</title>
+    <link rel="stylesheet" href="styles_ies.css"> 
+</head>
+<body>
+    <div class="page-container">
+        
+        <header class="main-header">
+            <div class="header-left">
+                <img src="img/logo_IES.jpg" alt="Logo V" class="header-logo-v">
+                <span class="logo-text">IES VALLE DEL JERTE</span>
+            </div>
+            <div class="header-logos">
+                <img src="img/logo_IyC.png" alt="Logo IC" class="header-logo-ic">
+            </div>
+        </header>
+
+        <div class="mobile-banner">IES VALLE DEL JERTE</div>
+
+        <nav class="nav-tabs">
+            <a href="#inicio" class="active">INICIO</a>
+            <a href="#ciclos">CICLOS FORMATIVOS</a>
+            <a href="#fct">FCT</a>
+            <a href="#contacto">CONTACTO</a>
+            <a href="#campus">CAMPUS VIRTUAL</a>
+        </nav>
+
+        <div class="content-layout">
+            
+            <section class="main-content">
+                
+                <article id="inicio" class="tab-content active-tab">
+                    <h3 class="mobile-tab-header active">INICIO</h3>
+                    <p>El IES Valle del Jerte es uno de los centros de referencia en la ciudad de Plasencia. Cuenta con 769 alumnos pertenecientes a:</p>
+                    
+                    <ul>
+                        <li>Educación Secundaria Obligatoria</li>
+                        <li>Formación Profesional Básica</li>
+                        <li>Ciclos Formativos de Grado Medio</li>
+                        <li>Ciclos Formativos de Grado Superior</li>
+                    </ul>
+
+                    <img class="content-image" src="img/fotoIES.jpg" alt="Edificio IES Valle del Jerte">
+                </article>
+
+                <article id="ciclos" class="tab-content">
+                    <h3 class="mobile-tab-header active">CICLOS FORMATIVOS</h3>
+                    <img class="content-image" src="img/Ciclos.jpg" alt="Iconos de Ciclos Formativos">
+                    <p>Ofrecemos una amplia oferta de Formación Profesional reglada de la familia de Informática y Comunicaciones:</p>
+                    
+                    <ul>
+                        <li>Formación Profesional Básica de **Informática de Oficina**</li>
+                        <li>Ciclo Formativo de Grado Medio de **Sistemas Microinformáticos y Redes**</li>
+                        <li>Ciclo Formativo de Grado Superior de **Desarrollo de Aplicaciones Multiplataforma**</li>
+                        <li>Ciclo Formativo de Grado Superior de **Desarrollo de Aplicaciones Web**</li>
+                        <li>Ciclo Formativo de Grado Superior de **Administración de Sistemas Informáticos en Red**</li>
+                    </ul>
+                    <img class="content-image" src="img/alumnos.jpg" alt="Alumnos en el centro de datos">
+                </article>
+
+                <article id="fct" class="tab-content">
+                    <h3 class="mobile-tab-header active">FCT</h3>
+                    <p>Colaboramos con decenas de empresas del sector para ofrecer oportunidades de empleo para nuestros alumnos egresados:</p>
+                    
+                    <img class="content-image" src="img/FCT.jpg" alt="Logos de empresas colaboradoras">
+                    <img class="content-image" src="img/ErasmusPlus.jpg" alt="Logo Erasmus Plus" style="max-width: 500px; margin: 20px auto;">
+                </article>
+                
+                <article id="contacto" class="tab-content">
+                    <h3 class="mobile-tab-header active">CONTACTO</h3>
+                    <p><strong>Dirección:</strong> Calle Pedro y Francisco González, s/n, 10600 Plasencia, Cáceres</p>
+                    <p><strong>Teléfono:</strong> 927 01 77 74</p>
+                    <p><strong>Email:</strong> ies.valledeljerte@edu.juntaex.es</p>
+                    <div style="height: 400px; background-color: #eee; margin-top: 15px; display: flex; justify-content: center; align-items: center; border: 1px solid #ccc;">[Placeholder Mapa de Google]</div>
+                </article>
+                
+                <article id="campus" class="tab-content">
+                    <h3 class="mobile-tab-header active">CAMPUS VIRTUAL</h3>
+                    <p>Disponemos de un Campus Virtual bajo la tecnología de Moodle para dar soporte a toda la docencia presencial de nuestros Ciclos Formativos:</p>
+                    <img class="content-image" src="img/campus_moodle.png" alt="Diseño de Interfaces Web - Álvaro Pablos">
+                    <p>Puedes acceder a él a través de <a href="#">este enlace.</a></p>
+                </article>
+                
+                <p class="mobile-course-info">Curso 2018/19 - Diseño de interfaces Web</p>
+
+            </section>
+
+            <aside class="icon-aside">
+                <div class="icon-box"><img src="img/aside_FPB.png" alt="FPB Informática de Oficina"></div>
+                <div class="icon-box"><img src="img/aside_SMR.png" alt="Sistemas Microinformáticos y Redes"></div>
+                <div class="icon-box"><img src="img/aside_DAM.png" alt="Desarrollo de Aplicaciones Multiplataforma"></div>
+                <div class="icon-box"><img src="img/aside_DAW.png" alt="Desarrollo de Aplicaciones Web"></div>
+                <div class="icon-box"><img src="img/aside_ASIR.png" alt="Administración de Sistemas Informáticos en Red"></div>
+                <div class="icon-box"><img src="img/aside_Extra.png" alt="IC Logo Extra"></div>
+            </aside>
+            
+        </div>
+        
+        <footer>
+            <span>Curso 2018/19 - Diseño de Interfaces Web</span>
+            <span class="social-icons">f &nbsp; t &nbsp; i</span> 
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.nav-tabs a');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active-tab'));
+                    
+                    this.classList.add('active');
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    document.getElementById(targetId).classList.add('active-tab');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
