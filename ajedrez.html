@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Ajedrez con Grid CSS</title>
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background: #ccc;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .chessboard {
+            display: grid;
+            grid-template-columns: 50px repeat(8, 80px) 50px;
+            grid-template-rows: 50px repeat(8, 80px) 50px;
+            border: 20px solid #d9a066;
+            background: #d9a066;
+            gap: 0;
+        }
+
+        .square {
+            width: 80px;
+            height: 80px;
+            background: #ffebcd;
+        }
+
+        .black {
+            background: #333;
+        }
+
+        .label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .corner {
+            background: #d9a066;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mi tablero de Ajedrez con Grid CSS Layout</h1>
+    <div class="chessboard" id="board"></div>
+
+    <script>
+        const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        const board = document.getElementById('board');
+
+        // Fila superior de letras
+        board.innerHTML += '<div class="corner"></div>';
+        files.forEach(f => board.innerHTML += `<div class="label">${f}</div>`);
+        board.innerHTML += '<div class="corner"></div>';
+
+        // Filas 8 a 1
+        for (let rank = 8; rank >= 1; rank--) {
+            board.innerHTML += `<div class="label">${rank}</div>`;
+            for (let file = 0; file < 8; file++) {
+                const isBlack = (rank + file) % 2 === 1;   // a1 es negra
+                board.innerHTML += `<div class="square ${isBlack ? 'black' : ''}"></div>`;
+            }
+            board.innerHTML += `<div class="label">${rank}</div>`;
+        }
+
+        // Fila inferior de letras
+        board.innerHTML += '<div class="corner"></div>';
+        files.forEach(f => board.innerHTML += `<div class="label">${f}</div>`);
+        board.innerHTML += '<div class="corner"></div>';
+    </script>
+</body>
+
+</html>
