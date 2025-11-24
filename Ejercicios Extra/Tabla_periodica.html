@@ -13,6 +13,7 @@
     align-items: center;
     padding: 20px 10px;
     min-height: 100vh;
+    position: relative;
   }
   h1 {
     color: white;
@@ -33,61 +34,54 @@
   }
 
   .elemento {
-    border: 1px solid #555;
+    background: #000;
+    border: 2px solid #555;
     display: grid;
     grid-template-rows: 22% 38% 22% 18%;
     justify-items: center;
     align-items: center;
     padding: 2px;
     font-size: 1.8vmin;
-    color: #000;
+    color: #fff;
     overflow: hidden;
   }
 
-  .numero {
-    font-size: 0.7em;
-    opacity: 0.9;
-  }
-  .simbolo {
-    font-size: 2.8em;
-    font-weight: bold;
-    line-height: 1;
-  }
-  .nombre {
-    font-size: 0.78em;
-    text-align: center;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .masa {
-    font-size: 0.65em;
-    opacity: 0.85;
+  .numero, .simbolo, .nombre, .masa {
+    color: inherit;
   }
 
-  /* COLORES EXACTOS */
-  .alcalinos          { background:#ffff00; }
-  .alcalinoterreos    { background:#ffdd00; }
-  .lantanidos         { background:#ffbfff; }
-  .actinidos          { background:#ff99cc; }
-  .metales-transicion { background:#ffc0c0; }
-  .otros-metales      { background:#cccccc; }
-  .metaloides         { background:#cccc99; }
-  .no-metales         { background:#c0ffff; }
-  .halogenos          { background:#ffff99; }
-  .gases-nobles       { background:#c0ffff; }
+  /* COLORES AJUSTADOS PARA CONCORDAR CON LA IMAGEN */
+  .alcalinos          { border-color: #ffff00; color: #ffff00; }
+  .alcalinoterreos    { border-color: #ffdd00; color: #ffdd00; }
+  .lantanidos         { border-color: #f0a8f0; color: #ffbfff; }
+  .actinidos          { border-color: #ee8fbe; color: #ff99cc; }
+  .metales-transicion { border-color: #ffc0c0; color: #ffc0c0; }
+  .otros-metales      { border-color: #cccccc; color: #cccccc; }
+  .metaloides         { border-color: #00fa92; color: #00ff9d; }
+  .no-metales         { border-color: #00ff6a; color: #00ff73; }
+  .halogenos          { border-color: #c7c77e; color: #ffff99; }
+  .gases-nobles       { border-color: #99ccff; color: #99ccff; }
 
   .vacio      { background:transparent; border:none; }
   .separador  { grid-column:1/-1; background:transparent; }
+
+  .leyenda {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1.2vmin;
+    color: #fff;
+  }
 </style>
 </head>
 <body>
 
 <h1>Mi Tabla Periódica con Grid CSS Layout</h1>
 
-<div class="wrapper">
-  <div class="tabla-periodica">
+<div class="tabla-periodica">
 
     <!-- PERIODO 1 -->
     <div class="elemento no-metales"><div class="numero">1</div><div class="simbolo">H</div><div class="nombre">Hidrógeno</div><div class="masa">1.008</div></div>
@@ -235,7 +229,20 @@
     <div class="elemento actinidos"><div class="numero">102</div><div class="simbolo">No</div><div class="nombre">Nobelio</div><div class="masa">(259)</div></div>
     <div class="elemento actinidos"><div class="numero">103</div><div class="simbolo">Lr</div><div class="nombre">Laurencio</div><div class="masa">(262)</div></div>
 
-  </div>
+</div>
+
+<!-- Leyenda ajustada -->
+<div class="leyenda">
+  <span style="color:#ffff00">Metales Alcalinos</span>
+  <span style="color:#ffdd00">Alcalinotérreos</span>
+  <span style="color:#ffbfff">Lantánidos</span>
+  <span style="color:#ff99cc">Actínidos</span>
+  <span style="color:#ffc0c0">Metales de Transición</span>
+  <span style="color:#cccccc">Otros Metales</span>
+  <span style="color:#cccc99">Metaloides</span>
+  <span style="color:#a5f2f3">No Metales</span>
+  <span style="color:#ffff99">Halógenos</span>
+  <span style="color:#99ccff">Gases Nobles</span>
 </div>
 
 </body>
