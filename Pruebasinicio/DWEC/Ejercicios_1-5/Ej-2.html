@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Lugares importantes de Plasencia</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; background: #f0f8ff; }
+        h1 { text-align: center; color: #2c3e50; }
+        #map { height: 680px; border: 4px solid #3498db; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+    <h1>Plasencia - Lugares Importantes</h1>
+    <div id="map"></div>
+
+    <script>
+        const map = L.map('map').setView([40.029, -6.090], 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Icono personalizado bonito (el mismo para todos)
+        const iconoBonito = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        // 1. Ayuntamiento de Plasencia
+        L.marker([40.03012, -6.08842], {icon: iconoBonito}).addTo(map)
+            .bindPopup(`
+                <b style="font-size:16px;">🏛️ Ayuntamiento de Plasencia</b><br>
+                Plaza Mayor s/n<br>
+                <i>Órgano de gobierno de la ciudad</i><br><br>
+                <a href="https://www.plasencia.es" target="_blank">🌐 Visitar web oficial</a>
+            `).openPopup();
+
+        // 2. Piscina Bioclimática
+        L.marker([40.03385, -6.09415], {icon: iconoBonito}).addTo(map)
+            .bindPopup(`
+                <b style="font-size:16px;">🏊‍♂️ Piscina Bioclimática</b><br>
+                Av. del Ambroz<br>
+                <i>Piscina cubierta climatizada todo el año</i><br><br>
+                <a href="https://www.plasencia.es/deportes" target="_blank">🌐 Más información</a>
+            `);
+
+        // 3. Instituto (IES Valle del Jerte)
+        L.marker([40.03655, -6.09595], {icon: iconoBonito}).addTo(map)
+            .bindPopup(`
+                <b style="font-size:16px;">🎓 IES Valle del Jerte</b><br>
+                Av. de la Vera, 38<br>
+                <i>Instituto de ESO, Bachillerato y Ciclos Formativos</i><br><br>
+                <a href="https://iesvalledeljerte.educarex.es" target="_blank">🌐 Web del instituto</a>
+            `);
+
+        // 4. Estación de Trenes de Plasencia
+        L.marker([40.02235, -6.09925], {icon: iconoBonito}).addTo(map)
+            .bindPopup(`
+                <b style="font-size:16px;">🚆 Estación de Tren Plasencia</b><br>
+                Av. de la Estación<br>
+                <i>Conexiones con Madrid, Cáceres, Badajoz y más</i><br><br>
+                <a href="https://www.renfe.com/es/es/experiencias/destinos/plasencia" target="_blank">🌐 Horarios Renfe</a>
+            `);
+    </script>
+</body>
+</html>
