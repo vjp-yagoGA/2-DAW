@@ -1,0 +1,16 @@
+<div
+  role="alert"
+  data-slot="alert"
+  class="relative w-full rounded-lg border px-4 py-3 text-sm grid has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-0.5 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current bg-card text-card-foreground"
+>
+  <svg class="size-4 translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    </svg>
+  
+  <div data-slot="alert-title" class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight">
+    Título de la Alerta
+  </div>
+  
+  <div data-slot="alert-description" class="text-muted-foreground col-start-2 grid justify-items-start gap-1 text-sm [&_p]:leading-relaxed">
+    <p>La descripción del mensaje de alerta va aquí.</p>
+  </div>
+</div>

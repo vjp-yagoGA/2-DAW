@@ -1,0 +1,89 @@
+/* Variables de color de ejemplo */
+:root {
+  --background: #ffffff;
+  --border-color: #e5e7eb;
+  --ring-color: #6366f1;
+  --modal-bg: #ffffff;
+  --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Animaciones (Requiere la definición de Keyframes) */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+/* Otras animaciones como zoom-in-95 y slide-in-from-top-[48%] necesitarían más keyframes */
+
+/* 1. Overlay (Fondo) */
+.dialog-overlay {
+  position: fixed;
+  inset: 0; /* fixed inset-0 */
+  z-index: 50; /* z-50 */
+  background-color: rgba(0, 0, 0, 0.5); /* bg-black/50 */
+}
+
+.dialog-overlay[data-state="open"] {
+  animation: fadeIn 0.2s ease-out; /* data-[state=open]:fade-in-0 */
+}
+
+/* 2. Contenido del Modal */
+.dialog-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 50;
+  width: 90%; /* Ajuste para móviles */
+  max-width: 32rem; /* max-w-lg (aprox.) */
+  transform: translate(-50%, -50%); /* -translate-x-1/2 -translate-y-1/2 */
+  
+  /* Estilo visual */
+  display: grid;
+  gap: 1rem; /* gap-4 */
+  border: 1px solid var(--border-color);
+  background-color: var(--modal-bg);
+  padding: 1.5rem; /* p-6 */
+  box-shadow: var(--modal-shadow);
+  border-radius: 0.5rem; /* sm:rounded-lg */
+}
+
+.dialog-content[data-state="open"] {
+  /* Estas animaciones son complejas y solo se simulan con el CSS de posicionamiento anterior. */
+  /* Requerirían muchos keyframes específicos de Tailwind (slide-in-from-top-[48%], zoom-in-95) */
+  animation-duration: 0.3s;
+}
+
+/* Encabezado y Pie de Página */
+.dialog-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center; /* text-center */
+}
+@media (min-width: 640px) { /* sm: */
+  .dialog-header { text-align: left; } /* sm:text-left */
+}
+
+.dialog-footer {
+  display: flex;
+  flex-direction: column-reverse; /* flex-col-reverse */
+  gap: 0.5rem;
+}
+@media (min-width: 640px) { /* sm: */
+  .dialog-footer {
+    flex-direction: row; /* sm:flex-row */
+    justify-content: flex-end; /* sm:justify-end */
+  }
+}
+
+/* Botón de Cerrar (X) */
+.dialog-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.dialog-close:hover {
+  opacity: 1;
+}

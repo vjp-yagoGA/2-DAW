@@ -1,0 +1,64 @@
+/* Variables de color de ejemplo */
+:root {
+  --primary: #10b981; 
+  --primary-foreground: #ffffff;
+  --input-background: #ffffff;
+  --border-color: #d1d5db;
+  --ring-color: #6366f1; /* Color de enfoque */
+}
+
+/* Estilo Base de la Casilla */
+.checkbox-base {
+  /* Propiedades de tamaño y forma */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem; /* size-4 */
+  height: 1rem; /* size-4 */
+  flex-shrink: 0; /* shrink-0 */
+  border-radius: 4px; /* rounded-[4px] */
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-xs (aprox.) */
+  cursor: pointer;
+  
+  /* Colores */
+  background-color: var(--input-background);
+  color: transparent; /* El color de la marca se define en el estado 'checked' */
+  outline: none;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+/* Indicador (la marca de verificación SVG) */
+.checkbox-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+.checkbox-indicator > svg {
+  width: 0.875rem; /* size-3.5 */
+  height: 0.875rem;
+}
+
+/* ESTADO: Marcado (Checked) */
+.checkbox-base[data-state="checked"] {
+  background-color: var(--primary); /* data-[state=checked]:bg-primary */
+  color: var(--primary-foreground); /* data-[state=checked]:text-primary-foreground */
+  border-color: var(--primary); /* data-[state=checked]:border-primary */
+}
+
+/* ESTADO: Enfoque (Focus visible) */
+.checkbox-base:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--ring-color), 0.5); /* focus-visible:ring-ring/50 focus-visible:ring-[3px] */
+  border-color: var(--ring-color);
+}
+
+/* ESTADO: Deshabilitado */
+.checkbox-base:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

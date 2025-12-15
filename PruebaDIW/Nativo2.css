@@ -1,0 +1,59 @@
+/* Variables de color */
+:root {
+    --card: #ffffff; /* Fondo de la tarjeta */
+    --card-foreground: #1f2937; /* Texto de la tarjeta */
+    --muted-foreground: #6b7280; /* Texto secundario */
+    --spacing: 0.25rem; /* Simulación de una unidad de espaciado */
+}
+
+/* Estilo base de la alerta */
+.alert-base {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #e5e7eb; /* border (ajustar color) */
+  padding: 0.75rem 1rem; /* py-3 px-4 */
+  font-size: 0.875rem; /* text-sm */
+  align-items: flex-start; /* items-start */
+  background-color: var(--card);
+  color: var(--card-foreground);
+}
+
+/* Configuración de la rejilla para cuando tiene un ícono */
+/* Nota: 'has()' no existe en CSS vanilla. Usaremos la estructura de Grid para simularlo. */
+.alert-with-icon {
+  display: grid;
+  /* Definición de columnas: Ícono (4x espaciado) y Contenido (1fr) */
+  grid-template-columns: calc(var(--spacing) * 4) 1fr;
+  gap-column: 0.75rem; /* gap-x-3 */
+  gap-row: 0.125rem; /* gap-y-0.5 */
+}
+
+/* Estilo del ícono (se aplica al SVG) */
+.alert-with-icon > svg {
+  width: 1rem; /* size-4 */
+  height: 1rem; /* size-4 */
+  transform: translateY(0.125rem); /* translate-y-0.5 */
+}
+
+/* Estilo del título y descripción para que empiecen en la segunda columna */
+.alert-with-icon [data-slot="alert-title"],
+.alert-with-icon [data-slot="alert-description"] {
+  grid-column-start: 2; /* col-start-2 */
+}
+
+/* Estilo del título */
+.alert-title {
+  min-height: 1rem; /* min-h-4 */
+  font-weight: 500; /* font-medium */
+  /* line-clamp-1 (requiere JavaScript o la propiedad experimental -webkit-line-clamp) */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Estilo de la descripción */
+.alert-description {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
