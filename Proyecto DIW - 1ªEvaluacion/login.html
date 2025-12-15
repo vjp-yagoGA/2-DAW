@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,24 @@
         .login-card {
             background: #fff;
             border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(16,179,62,0.10);
+            box-shadow: 0 8px 32px rgba(16, 179, 62, 0.10);
             max-width: 420px;
             margin: 48px auto 0 auto;
             padding: 36px 32px 32px 32px;
         }
+
         .login-title {
             text-align: center;
             font-size: 1.18rem;
             margin-bottom: 24px;
         }
-        .social-btn {
+
+         .social-btn, form button[type="submit"] {
             width: 100%;
             margin-bottom: 16px;
             font-size: 1.08rem;
             font-weight: 500;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 14px 0;
             display: flex;
             align-items: center;
@@ -32,31 +35,49 @@
             gap: 12px;
             border: none;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: filter 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(123,47,242,0.10);
         }
-        .google { background: #ea4335; color: #fff; }
-        .facebook { background: #1877f2; color: #fff; }
-        .social-btn svg { width: 22px; height: 22px; }
+        .social-btn.google {
+            background: linear-gradient(90deg, #ea4335 0%, #fbbc05 100%);
+            color: #fff;
+        }
+
+       .social-btn.facebook {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .social-btn svg {
+            width: 22px;
+            height: 22px;
+        }
+
         .divider {
             display: flex;
             align-items: center;
             margin: 24px 0 18px 0;
         }
+
         .divider hr {
             flex: 1;
             border: none;
             border-top: 1px solid #eee;
         }
+
         .divider span {
             margin: 0 12px;
             color: #bbb;
             font-size: 1.1rem;
         }
+
         form label {
             margin-top: 8px;
             margin-bottom: 2px;
         }
-        form input[type="email"], form input[type="password"] {
+
+        form input[type="email"],
+        form input[type="password"] {
             width: 100%;
             padding: 12px 10px;
             border-radius: 6px;
@@ -65,8 +86,9 @@
             font-size: 1rem;
             margin-bottom: 10px;
         }
+
         form button[type="submit"] {
-            background: var(--main-green);
+            background: linear-gradient(90deg, #7b2ff2 0%, #f357a8 100%);
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -75,13 +97,16 @@
             font-weight: 500;
             margin-top: 10px;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: filter 0.2s;
+            box-shadow: 0 2px 8px rgba(123, 47, 242, 0.10);
         }
+
         form button[type="submit"]:hover {
-            background: var(--main-green-dark);
+            filter: brightness(0.95);
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Librería Online</h1>
@@ -99,15 +124,14 @@
         <div class="login-card">
             <div class="login-title">Iniciar Sesión</div>
             <button type="button" class="social-btn google">
-                <svg viewBox="0 0 24 24"><path fill="#fff" d="M21.35 11.1h-9.17v2.13h5.23c-.22 1.16-1.32 3.4-5.23 3.4-3.15 0-5.73-2.61-5.73-5.8s2.58-5.8 5.73-5.8c1.8 0 3.01.72 3.7 1.34l2.52-2.44C16.07 2.9 14.22 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10c5.52 0 10-4.48 10-10 0-.68-.07-1.34-.2-1.9z"/></svg>
                 Continuar con Google
             </button>
             <button type="button" class="social-btn facebook">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#fff"/><path d="M15.36 8.26h-1.54c-.18 0-.36.18-.36.36v1.08h1.9l-.24 1.9h-1.66v5.44h-2.18v-5.44h-1.08v-1.9h1.08v-1.08c0-1.26.72-2.18 2.18-2.18h1.54v1.9z" fill="#1877f2"/></svg>
                 Continuar con Facebook
             </button>
             <div class="divider">
-                <hr><span>o</span><hr>
+                <hr><span>o</span>
+                <hr>
             </div>
             <form>
                 <label for="email">Email</label>
@@ -122,4 +146,5 @@
         <p>&copy; 2025 Librería Online. Todos los derechos reservados.</p>
     </footer>
 </body>
+
 </html>

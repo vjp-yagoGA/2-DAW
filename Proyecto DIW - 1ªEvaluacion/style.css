@@ -1,15 +1,16 @@
 :root {
-    --main-green: #10b33e;
-    --main-green-dark: #0e8c31;
-    --main-bg: #f8f9fa;
+    --main-violet: #7b2ff2;
+    --main-pink: #f357a8;
+    --main-violet-dark: #5f1bbd;
+    --main-bg: #f6f4ff;
     --card-bg: #fff;
-    --shadow: 0 4px 16px rgba(0,0,0,0.08);
-    --border-radius: 14px;
+    --shadow: 0 6px 24px rgba(123,47,242,0.08);
+    --border-radius: 18px;
     --transition: 0.2s;
-    --text-gray: #6c757d;
+    --text-gray: #7a7a8c;
     --text-black: #222;
-    --input-border: #d1d5db;
-    --input-bg: #f4f4f4;
+    --input-border: #e0d7fa;
+    --input-bg: #f8f6ff;
     --footer-bg: #111;
 }
 
@@ -25,10 +26,11 @@ body {
 }
 
 header {
-    background: var(--main-green);
+    background: linear-gradient(90deg, var(--main-violet) 0%, var(--main-pink) 100%);
     color: white;
     padding: 0;
     margin: 0;
+    box-shadow: 0 2px 16px rgba(123,47,242,0.08);
 }
 
 nav ul {
@@ -57,7 +59,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #e0e0e0;
+    color: #ffe6fa;
 }
 
 main {
@@ -84,9 +86,8 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
-h2 {
-    margin-bottom: 24px;
-    font-size: 1.5rem;
+h2, h3 {
+    color: var(--main-violet);
 }
 
 section, .card, .order-summary, .search-card {
@@ -123,7 +124,7 @@ section, .card, .order-summary, .search-card {
 }
 .categoria:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 8px 32px rgba(16,179,62,0.10);
+    box-shadow: 0 8px 32px rgba(123,47,242,0.12);
 }
 .categoria img {
     width: 100%;
@@ -138,6 +139,7 @@ section, .card, .order-summary, .search-card {
     font-size: 1.18rem;
     font-weight: 600;
     margin-bottom: 6px;
+    color: var(--main-violet);
 }
 .categoria-desc {
     color: var(--text-gray);
@@ -166,12 +168,12 @@ section, .card, .order-summary, .search-card {
     margin: 40px auto 0 auto;
     padding: 36px 32px 32px 32px;
     border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(16,179,62,0.10);
+    box-shadow: 0 8px 32px rgba(123,47,242,0.10);
 }
 .order-summary h2 {
     font-size: 1.2rem;
     margin-bottom: 32px;
-    color: var(--text-black);
+    color: var(--main-violet);
     font-weight: 500;
 }
 .order-summary-list {
@@ -193,6 +195,7 @@ section, .card, .order-summary, .search-card {
 .order-summary-item-title {
     font-weight: 600;
     font-size: 1.08rem;
+    color: var(--main-violet);
 }
 .order-summary-item-qty {
     color: var(--text-gray);
@@ -210,14 +213,14 @@ section, .card, .order-summary, .search-card {
     padding-top: 18px;
 }
 .order-summary-total-row .total-amount {
-    color: var(--main-green);
+    color: var(--main-violet);
     font-size: 1.15rem;
 }
 
 .payment-btn {
     width: 100%;
     margin-bottom: 16px;
-    background: var(--main-green);
+    background: linear-gradient(90deg, var(--main-violet) 0%, var(--main-pink) 100%);
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -229,14 +232,14 @@ section, .card, .order-summary, .search-card {
     justify-content: center;
     gap: 12px;
     transition: background var(--transition), box-shadow var(--transition);
-    box-shadow: 0 2px 8px rgba(16,179,62,0.08);
+    box-shadow: 0 2px 8px rgba(123,47,242,0.08);
     cursor: pointer;
 }
 .payment-btn:last-child {
     margin-bottom: 0;
 }
 .payment-btn:hover {
-    background: var(--main-green-dark);
+    filter: brightness(0.95);
 }
 
 .payment-btn svg {
@@ -253,13 +256,20 @@ section, .card, .order-summary, .search-card {
 .search-bar {
     width: 100%;
     padding: 14px 18px;
-    border-radius: 8px;
-    border: 1px solid var(--input-border);
-    background: var(--input-bg);
+    border-radius: 12px;
+    border: 2px solid #e0d7fa;
+    background: #f8f6ff;
     font-size: 1.08rem;
     outline: none;
     margin-bottom: 0;
+    color: var(--main-violet);
+    box-shadow: 0 2px 12px rgba(123,47,242,0.08);
+    transition: border-color 0.2s;
 }
+.search-bar:focus {
+    border-color: var(--main-violet);
+}
+
 .search-card {
     display: flex;
     flex-direction: row;
@@ -268,7 +278,7 @@ section, .card, .order-summary, .search-card {
     margin-bottom: 24px;
     padding: 24px 24px 18px 24px;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    box-shadow: 0 6px 24px rgba(123,47,242,0.10);
     background: var(--card-bg);
     max-width: 700px;
     width: 100%;
@@ -280,6 +290,7 @@ section, .card, .order-summary, .search-card {
     font-weight: 600;
     font-size: 1.13rem;
     margin-bottom: 4px;
+    color: var(--main-violet);
 }
 .search-card-author {
     color: var(--text-gray);
@@ -295,22 +306,23 @@ section, .card, .order-summary, .search-card {
     font-size: 1.08rem;
     margin-bottom: 12px;
     text-align: right;
-    color: var(--text-black);
+    color: var(--main-violet-dark);
 }
 .add-cart-btn {
-    background: var(--main-green);
+    background: linear-gradient(90deg, var(--main-violet) 0%, var(--main-pink) 100%);
     color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 10px 18px;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background var(--transition);
+    transition: filter 0.2s, box-shadow 0.2s;
     margin-left: 12px;
+    box-shadow: 0 2px 8px rgba(123,47,242,0.10);
 }
 .add-cart-btn:hover {
-    background: var(--main-green-dark);
+    filter: brightness(0.95);
 }
 
 @media (max-width: 900px) {
