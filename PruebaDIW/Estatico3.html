@@ -1,0 +1,20 @@
+<div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border">
+  
+  <div data-slot="card-header" class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 [.border-b]:pb-6">
+    <h4 data-slot="card-title" class="leading-none text-xl font-semibold">
+      Título de la Tarjeta
+    </h4>
+    <p data-slot="card-description" class="text-muted-foreground text-sm">
+      Descripción breve o subtítulo.
+    </p>
+    </div>
+  
+  <div data-slot="card-content" class="px-6 [&:last-child]:pb-6">
+    <p>Este es el cuerpo de la tarjeta, donde va el texto o la información.</p>
+  </div>
+  
+  <div data-slot="card-footer" class="flex items-center p-6 pt-0">
+    <button class="[Clases de botón de ejemplo]">Aceptar</button>
+  </div>
+
+</div>

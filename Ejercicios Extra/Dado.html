@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Caras de un Dado con Flexbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        .dice-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+        }
+
+        .face {
+            width: 150px;
+            height: 150px;
+            background: #ff0000;  /* Rojo */
+            border: 2px solid black;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pip {
+            width: 25px;
+            height: 25px;
+            background: white;  /* Puntos blancos */
+            border-radius: 50%;
+        }
+
+        /* Cara 1: Centro */
+        .face-1 {
+            justify-content: center;
+        }
+        .face-1 .row {
+            justify-content: center;
+        }
+
+        /* Cara 2: Esquinas opuestas */
+        .face-2 .row:nth-child(1) {
+            justify-content: flex-start;
+        }
+        .face-2 .row:nth-child(2) {
+            justify-content: flex-end;
+        }
+
+        /* Cara 3: Diagonal */
+        .face-3 .row:nth-child(1) {
+            justify-content: flex-start;
+        }
+        .face-3 .row:nth-child(2) {
+            justify-content: center;
+        }
+        .face-3 .row:nth-child(3) {
+            justify-content: flex-end;
+        }
+
+        /* Cara 4: Cuadrado (corregido para mejor alineación) */
+        /* Usa space-between para empujar a los bordes */
+
+        /* Cara 5: Cruz (corregido sin position absolute, puro Flexbox) */
+        .face-5 .row:nth-child(2) {
+            justify-content: center;
+        }
+
+        /* Cara 6: Dos por fila */
+
+    </style>
+</head>
+<body>
+    <div class="dice-container">
+        <!-- Cara 1 -->
+        <div class="face face-1">
+            <div class="row">
+                <div class="pip"></div>
+            </div>
+        </div>
+
+        <!-- Cara 2 -->
+        <div class="face face-2">
+            <div class="row">
+                <div class="pip"></div>
+            </div>
+            <div class="row">
+                <div class="pip"></div>
+            </div>
+        </div>
+
+        <!-- Cara 3 -->
+        <div class="face face-3">
+            <div class="row">
+                <div class="pip"></div>
+            </div>
+            <div class="row">
+                <div class="pip"></div>
+            </div>
+            <div class="row">
+                <div class="pip"></div>
+            </div>
+        </div>
+
+        <!-- Cara 4 -->
+        <div class="face face-4">
+            <div class="row">
+                <div class="pip"></div>
+                <div class="pip"></div>
+            </div>
+            <div class="row">
+                <div class="pip"></div>
+                <div class="pip"></div>
+            </div>
+        </div>
+
+        <!-- Cara 5 -->
+        <div class="face face-5">
+            <div class="row">
+                <div class="pip"></div>
+                <div class="pip"></div>
+            </div>
+            <div class="row">
+                <div class="pip"></div>
+            </div>
+            <div class="row">
+                <div class="pip"></div>
+                <div class="pip"></div>
+            </div>
+        </div>
+
+        <!-- Cara 6 -->
+        <div class="face face-6">
+            <div class="row">
+                <div class="pip"></div>
+                <div class="pip"></div>
+            </div>
+            <div class="row">
+                <div class="pip"></div>
+                <div class="pip"></div>
+            </div>
+            <div class="row">
+                <div class="pip"></div>
+                <div class="pip"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

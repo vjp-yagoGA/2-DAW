@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 2.1 - Progresión Salarial 3% Anual</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      padding: 40px;
+      text-align: center;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    .chart-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Progresión Salarial Anual (+3% cada año) durante 10 años</h2>
+  <p>Salario inicial: <strong>30,000 USD</strong></p>
+
+  <div class="chart-container">
+    <canvas id="salaryChart"></canvas>
+  </div>
+
+<script>
+// Datos del ejercicio
+const salarioInicial = 30000;
+const tasaCrecimiento = 0.03;  // 3% anual
+const años = 10;
+
+// Generamos los datos: Año 0, Año 1, ..., Año 10
+const labels = [];
+const salarios = [];
+
+for (let año = 0; año <= años; año++) {
+  labels.push(`Año ${año}`);
+  const salario = salarioInicial * Math.pow(1 + tasaCrecimiento, año);
+  salarios.push(Math.round(salario));  // redondeamos para que se vea limpio
+}
+
+// Crear la gráfica de líneas
+new Chart(document.getElementById('salaryChart'), {
+  type: 'line',
+  data: {
+    labels: labels,
+    datasets: [{
+      label: 'Salario Anual (USD)',
+      data: salarios,
+      borderColor: '#3498db',
+      backgroundColor: 'rgba(52, 152, 219, 0.1)',
+      borderWidth: 4,
+      pointBackgroundColor: '#3498db',
+      pointRadius: 6,
+      pointHoverRadius: 10,
+      fill: true,
+      tension: 0.4  
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Evolución del Salario con Incremento Anual del 3%',
+        font: { size: 18 }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return `Salario: $${context.parsed.y.toLocaleString()} USD`;
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: false,
+        ticks: {
+          callback: function(value) {
+            return '$' + value.toLocaleString();
+          }
+        },
+        title: {
+          display: true,
+          text: 'Salario Anual (USD)'
+        }
+      },
+      x: {
+        title: {
+          display: true,
+          text: 'Años'
+        }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

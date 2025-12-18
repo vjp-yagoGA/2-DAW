@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(16, 179, 62, 0.10);
+            max-width: 420px;
+            margin: 48px auto 0 auto;
+            padding: 36px 32px 32px 32px;
+        }
+
+        .login-title {
+            text-align: center;
+            font-size: 1.18rem;
+            margin-bottom: 24px;
+        }
+
+         .social-btn, form button[type="submit"] {
+            width: 100%;
+            margin-bottom: 16px;
+            font-size: 1.08rem;
+            font-weight: 500;
+            border-radius: 12px;
+            padding: 14px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+            transition: filter 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(123,47,242,0.10);
+        }
+        .social-btn.google {
+            background: linear-gradient(90deg, #ea4335 0%, #fbbc05 100%);
+            color: #fff;
+        }
+
+       .social-btn.facebook {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .social-btn svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 24px 0 18px 0;
+        }
+
+        .divider hr {
+            flex: 1;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+
+        .divider span {
+            margin: 0 12px;
+            color: #bbb;
+            font-size: 1.1rem;
+        }
+
+        form label {
+            margin-top: 8px;
+            margin-bottom: 2px;
+        }
+
+        form input[type="email"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 12px 10px;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+            background: #f4f4f4;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        form button[type="submit"] {
+            background: linear-gradient(90deg, #7b2ff2 0%, #f357a8 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 0;
+            font-size: 1.08rem;
+            font-weight: 500;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: filter 0.2s;
+            box-shadow: 0 2px 8px rgba(123, 47, 242, 0.10);
+        }
+
+        form button[type="submit"]:hover {
+            filter: brightness(0.95);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Librería Online</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="categories.html">Categorías</a></li>
+                <li><a href="search.html">Búsqueda</a></li>
+                <li><a href="order-summary.html">Resumen de pedido</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="login-card">
+            <div class="login-title">Iniciar Sesión</div>
+            <button type="button" class="social-btn google">
+                Continuar con Google
+            </button>
+            <button type="button" class="social-btn facebook">
+                Continuar con Facebook
+            </button>
+            <div class="divider">
+                <hr><span>o</span>
+                <hr>
+            </div>
+            <form>
+                <label for="email">Email</label>
+                <input type="email" id="email" required placeholder="tu@email.com">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" required placeholder="********">
+                <button type="submit">Iniciar</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Librería Online. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

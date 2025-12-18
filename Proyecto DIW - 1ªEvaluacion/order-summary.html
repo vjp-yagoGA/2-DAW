@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de pedido</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .payment-btn, .social-btn {
+            width: 100%;
+            margin-bottom: 16px;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 0;
+            font-size: 1.08rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: filter 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(123,47,242,0.10);
+        }
+        .payment-btn {
+            background: linear-gradient(90deg, #7b2ff2 0%, #f357a8 100%);
+            color: #fff;
+        }
+        .payment-btn:last-child {
+            margin-bottom: 0;
+        }
+        .payment-btn:hover, .social-btn:hover {
+            filter: brightness(0.95);
+        }
+        .social-btn.google {
+            background: #ea4335;
+            color: #fff;
+        }
+        .social-btn.facebook {
+            background: #1877f2;
+            color: #fff;
+        }
+        .social-btn svg, .payment-btn svg {
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+        }
+        .order-summary-list {
+            margin: 0 0 18px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .order-summary-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 18px 0 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.08rem;
+        }
+        .order-summary-list li:last-child {
+            border-bottom: none;
+        }
+        .order-summary-item-title {
+            font-weight: 600;
+            font-size: 1.08rem;
+            color: #7b2ff2;
+        }
+        .order-summary-item-qty {
+            color: #7a7a8c;
+            font-size: 0.97rem;
+            margin-top: 2px;
+        }
+        .order-summary-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 18px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-top: 1px solid #eee;
+            padding-top: 18px;
+        }
+        .order-summary-total-row .total-amount {
+            color: #7b2ff2;
+            font-size: 1.15rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Librería Online</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="categories.html">Categorías</a></li>
+                <li><a href="search.html">Búsqueda</a></li>
+                <li><a href="order-summary.html">Resumen de pedido</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="order-summary">
+            <h2>Resumen de Pedido</h2>
+            <ul class="order-summary-list">
+                <li>
+                    <div>
+                        <div class="order-summary-item-title">Libro Ejemplo</div>
+                        <div class="order-summary-item-qty">Cantidad: 1</div>
+                    </div>
+                    <div>15€</div>
+                </li>
+                <li>
+                    <div>
+                        <div class="order-summary-item-title">Libro Relacionado</div>
+                        <div class="order-summary-item-qty">Cantidad: 2</div>
+                    </div>
+                    <div>30€</div>
+                </li>
+            </ul>
+            <div class="order-summary-total-row">
+                <span>Total</span>
+                <span class="total-amount">45€</span>
+            </div>
+            <button class="payment-btn">
+                Pagar con PayPal
+            </button>
+            <button class="payment-btn">
+                Pagar con Google Pay
+            </button>
+            <button class="payment-btn">
+                Pagar con Tarjeta
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Librería Online. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

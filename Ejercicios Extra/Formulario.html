@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input[type="text"],
+        select {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="get">
+        <h1>CATÁLOGO DE ARTE</h1>
+
+        <p>Introduce los términos de búsqueda:</p>
+
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo"><br>
+
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" name="autor"><br>
+
+        <label>Tipo:</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="escultura" name="tipo" value="esc">
+            <label for="escultura">Escultura</label><br>
+            <input type="checkbox" id="arquitectura" name="tipo" value="arq">
+            <label for="arquitectura">Arquitectura</label><br>
+            <input type="checkbox" id="pintura" name="tipo" value="pint">
+            <label for="pintura">Pintura</label>
+        </div>
+
+        <label>Disponibilidad:</label>
+        <div class="radio-group">
+            <input type="radio" id="pub" name="disp" value="pub">
+            <label for="pub">Museo / Acceso público</label><br>
+            <input type="radio" id="priv" name="disp" value="priv">
+            <label for="priv">Colección privada</label>
+        </div>
+
+        <label for="estilo">Estilo:</label>
+        <select id="estilo" name="estilo">
+            <option value="clasico">Clásico</option>
+            <option value="abs">Abstracto</option>
+            <option value="surr">Surrealista</option>
+            <option value="otros">Otros</option>
+        </select><br>
+
+        <p>Hágame saber sus sugerencias: Me gustaría indicar que...</p>
+        <textarea name="sugerencias" rows="4" cols="40">Me gustaría indicar que...</textarea><br>
+
+        <input type="submit" value="Buscar">
+    </form>
+</body>
+
+</html>

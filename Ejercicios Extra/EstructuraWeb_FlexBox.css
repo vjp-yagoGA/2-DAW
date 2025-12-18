@@ -1,0 +1,131 @@
+:root {
+    --color-header: #801515;
+    --color-aside: #D46A6A; 
+    --color-cuerpo: #AA3939;
+    --color-pie: #550000;
+    --color-texto-claro: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--color-texto-claro);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: var(--color-header);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.menu-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-nav button {
+    background-color: var(--color-aside);
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px; 
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cuerpo-content {
+    background-color: var(--color-cuerpo);
+    padding: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    flex: 1;
+}
+
+aside {
+    background-color: var(--color-aside);
+    padding: 40px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-pie);
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+@media (max-width: 699px) {
+    
+    header {
+        justify-content: space-between; 
+        align-items: flex-start; 
+        flex-direction: row; 
+        gap: 0;
+        padding-right: 20px;
+    }
+
+    .menu-nav {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .menu-nav button {
+        width: 200px; 
+        padding: 8px 16px;
+    }
+
+    aside {
+        order: 1; 
+    }
+    
+    .cuerpo-content {
+        order: 2; 
+    }
+}
+
+
+@media (min-width: 700px) {
+    header {
+        align-items: center; 
+    }
+
+    .menu-nav {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    main {
+        flex-direction: row;
+    }
+
+    .cuerpo-content {
+        width: 70%;
+        order: 2;
+    }
+
+    aside {
+        width: 30%;
+        order: 1;
+    }
+}

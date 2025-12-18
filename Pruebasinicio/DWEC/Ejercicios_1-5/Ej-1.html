@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa con Localización</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map { height: 400px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([40.0312, -6.0833], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        var customIcon = L.icon({
+            iconUrl: 'https://media.istockphoto.com/id/1174212459/photo/mid-adult-male-school-counselor-stands-in-lobby.jpg?s=612x612&w=0&k=20&c=3HkCxeJFd5GXOksYNadPi7Ku_CEW95ed11jE2ei_CVc=', 
+            iconSize: [50, 50],
+            iconAnchor: [25, 50],
+            popupAnchor: [0, -50]
+        });
+
+        var marker = L.marker([40.0312, -6.0833], {icon: customIcon}).addTo(map);
+
+        function updateLocation() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                marker.setLatLng([lat, lng]);
+                map.setView([lat, lng], 13);
+            }, function(error) {
+                console.error('Error: ' + error.message);
+            });
+        }
+
+        updateLocation();
+        setInterval(updateLocation, 30000); // Cada 30 segundos
+    </script>
+</body>
+</html>

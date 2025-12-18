@@ -1,0 +1,53 @@
+/* Variables de color (necesitarías definir todas las variables usadas) */
+:root {
+  --primary: #10b981; /* Ejemplo: un color verde para primary */
+  --primary-foreground: #ffffff;
+  --destructive: #ef4444;
+  /* ... otras variables ... */
+}
+
+/* Base de los botones */
+.button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 */
+  white-space: nowrap;
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  transition: all 0.2s ease-in-out; /* transition-all */
+  cursor: pointer;
+  outline: none;
+  /* Estado deshabilitado */
+  pointer-events: none; /* disabled:pointer-events-none */
+  opacity: 0.5; /* disabled:opacity-50 */
+}
+
+/* Tamaño por defecto (default) */
+.button-default-size {
+  height: 2.25rem; /* h-9 */
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+}
+
+/* Variante por defecto (default) */
+.button-default-variant {
+  background-color: var(--primary); /* bg-primary */
+  color: var(--primary-foreground); /* text-primary-foreground */
+  border: 1px solid transparent;
+}
+
+.button-default-variant:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, black); /* hover:bg-primary/90 */
+}
+
+/* Variante Destructive */
+.button-destructive-variant {
+  background-color: var(--destructive); /* bg-destructive */
+  color: white; /* text-white */
+  border: 1px solid transparent;
+}
+
+.button-destructive-variant:hover {
+  background-color: color-mix(in srgb, var(--destructive) 90%, black); /* hover:bg-destructive/90 */
+}

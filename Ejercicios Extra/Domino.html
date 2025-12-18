@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Fichas de Dominó con Flexbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        .domino-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+        }
+
+        .domino {
+            width: 150px;
+            height: 300px; 
+            background: white;
+            border: 2px solid black;
+            border-radius: 15px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .face {
+            height: 140px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .divider {
+            width: 70%; 
+            height: 5px; 
+            background: black;
+            margin: 0 auto; 
+            border-radius: 5px; 
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 33.33%; 
+        }
+
+        .pip {
+            width: 25px;
+            height: 25px;
+            background: black;  
+            border-radius: 50%;
+        }
+
+        /* Clases de utilidad para la alineación horizontal */
+        .row.center-h { justify-content: center; } 
+        .row.start-h { justify-content: flex-start; }
+        .row.end-h { justify-content: flex-end; }
+    </style>
+</head>
+<body>
+    <div class="domino-container">
+        
+        <div class="domino">
+            <div class="face"> 
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="face"> 
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="domino">
+            <div class="face"> 
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+                <div class="row center-h">
+                    <div class="pip"></div>
+                </div>
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="face"> 
+                <div class="row"></div>
+                <div class="row center-h">
+                    <div class="pip"></div>
+                </div>
+                <div class="row"></div>
+            </div>
+        </div>
+
+        <div class="domino">
+            <div class="face"> 
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+                <div class="row"></div>
+                <div class="row">
+                    <div class="pip"></div>
+                    <div class="pip"></div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="face"> 
+                <div class="row end-h">
+                    <div class="pip"></div>
+                </div>
+                <div class="row center-h">
+                    <div class="pip"></div>
+                </div>
+                <div class="row start-h">
+                    <div class="pip"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="domino">
+            <div class="face"> 
+                <div class="row end-h">
+                    <div class="pip"></div>
+                </div>
+                <div class="row"></div>
+                <div class="row start-h">
+                    <div class="pip"></div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="face"> 
+                <div class="row"></div>
+                <div class="row center-h">
+                </div>
+                <div class="row"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
